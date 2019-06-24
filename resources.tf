@@ -1,5 +1,5 @@
 resource "vsphere_virtual_machine" "virtual_machine" {
-  count            = "${length(var.vm_ips)}"
+  count            = "${var.vm_count}"
   name             = "${var.vm_name_prefix}${count.index}"
   resource_pool_id = "${data.vsphere_resource_pool.resource_pool.id}"
 
@@ -31,8 +31,6 @@ resource "vsphere_virtual_machine" "virtual_machine" {
         domain    = "${var.vm_domain}"
       }
       network_interface {
-        ipv4_address = "${lookup(var.vm_ips, count.index)}"
-        ipv4_netmask = "${var.vm_netmask}"
       }
       ipv4_gateway    = "${var.vm_gateway}"
       dns_server_list = ["${var.vm_dns}"]

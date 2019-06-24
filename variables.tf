@@ -35,11 +35,6 @@ variable "vm_template" {
   description = "Template used to create the vSphere virtual machines (linked clone)"
 }
 
-variable "vm_ips" {
-  type        = "map"
-  description = "IPs used for the nodes"
-}
-
 variable "vm_cpu" {
   description = "Number of vCPU for the Kubernetes master virtual machines"
 }
@@ -52,6 +47,9 @@ variable "vm_linked_clone" {
   description = "Use linked clone for Clone Build"
 }
 
+variable "vm_count" {
+  description = "Qty of VM Created from template"
+}
 variable "vm_name_prefix" {
   description = "Hostname applied by the VMware template customizations"
 }

@@ -33,6 +33,9 @@ vsphere_datastore = "DS-Primary"
 # Global virtual machines parameters
 #===============================================================================
 
+# The count to crate of the virtual machines #
+vm_count = "1"
+
 # The prefix to add to the names of the virtual machines #
 vm_name_prefix = "vm-ubuntu"
 
