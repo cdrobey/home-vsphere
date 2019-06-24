@@ -1,0 +1,67 @@
+#===============================================================================
+# VMware vSphere configuration
+#===============================================================================
+
+# vCenter IP or FQDN #
+vsphere_server = "vcentername"
+
+# vSphere username used to deploy the infrastructure #
+vsphere_user = "administrator@vsphere.local"
+
+# Skip the verification of the vCenter SSL certificate (true/false) #
+vsphere_unverified_ssl = "true"
+
+# vSphere datacenter name where the infrastructure will be deployed #
+vsphere_datacenter = "Data Center"
+
+# vSphere cluster name where the infrastructure will be deployed #
+vsphere_cluster = "Cluster"
+
+# vSphere resource pool name that will be created to deploy the virtual machines #
+vsphere_resource_pool = "Cluster/Resources"
+
+# vSphere resource pool name that will be created to deploy the virtual machines #
+vsphere_host = "esx.domain.com"
+
+# vSphere switch that will be used for the host #
+vsphere_network = "VM Network"
+
+# The datastore name used to store  #
+vsphere_datastore = "DS-Primary"
+
+#===============================================================================
+# Global virtual machines parameters
+#===============================================================================
+
+# The prefix to add to the names of the virtual machines #
+vm_name_prefix = "vm-ubuntu"
+
+# The domain to add to the virtual machines #
+vm_domain = "lab.home"
+
+# The netmask to the virtual machines # 
+vm_netmask = "24"
+
+# The gateway to the virtual machines # 
+vm_gateway = "X.X.X.X"
+
+# The dns server to the virtual machines # 
+vm_dns = "X.X.X.X"
+
+# The vSphere template the virtual machine are based on #
+vm_template = "Ubuntu_Template"
+
+# Use linked clone (true/false)
+vm_linked_clone = "false"
+
+# The number of vCPU allocated to the master virtual machines #
+vm_cpu = "2"
+
+# The amount of RAM allocated to the master virtual machines #
+vm_ram = "2048"
+
+# The amount of IPs allocated to the master virtual machines #
+vm_ips = {
+  "0" = "X.X.X.X"
+}
+
