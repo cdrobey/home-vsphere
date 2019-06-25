@@ -113,7 +113,7 @@ function install_pe {
 "puppet_enterprise::profile::master::r10k_remote": "${GITURL}"
 "puppet_enterprise::profile::master::r10k_private_key": "/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa"
 FILE
-  /tmp/puppet-enterprise-${PVER}-${POS}-x86_64/puppet-enterprise-installer -c /tmp/pe.conf
+  /tmp/puppet-enterprise-${PVER}-${POS}-amd64/puppet-enterprise-installer -c /tmp/pe.conf
   chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-*
 }
 
