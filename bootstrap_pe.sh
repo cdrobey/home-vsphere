@@ -20,6 +20,7 @@ PVER="2019.1.0"
 POS="ubuntu-18.04"
 PFILE="puppet-enterprise-${PVER}-${POS}-amd64.tar.gz"
 PURL="https://pm.puppetlabs.com/puppet-enterprise/${PVER}/${PFILE}"
+EMAIL="chris.roberson@puppet.com"
 GITURL="https://github.com/cdrobey/puppet-repo"
 
 #--------------------------------------------------------------
@@ -84,7 +85,7 @@ rbac_user { 'deploy':
     ensure       => 'present',
     name         => 'deploy',
     display_name => 'deployment user account',
-    email        => '${var.user_name}@puppet.com',
+    email        => '${EMAIL}@puppet.com',
     password     => 'puppetlabs',
     roles        => [ 'Code Deployers' ],
 }
