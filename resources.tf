@@ -1,9 +1,6 @@
 resource "vsphere_virtual_machine" "virtual_machine" {
   count            = "${var.vm_count}"
-  #name             = "${var.vm_name_prefix}${count.index}"
-
-  name             = "${format("%s%02d", var.vm_name_prefix, count.index + 1)}"
-
+  name             = "${format ("%s-%2d", var.vm_name_prefix, count.index+1)}"
   resource_pool_id = "${data.vsphere_resource_pool.resource_pool.id}"
 
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
@@ -18,7 +15,7 @@ resource "vsphere_virtual_machine" "virtual_machine" {
     adapter_type = "${data.vsphere_virtual_machine.template.network_interface_types[0]}"
   }
   disk {
-    label            = "${var.vm_name_prefix}${count.index}.vmdk"
+    label            = "${format ("%s-%2d", var.vm_name_prefix, count.index+1)}.vmdk"
     size             = "${data.vsphere_virtual_machine.template.disks.0.size}"
     thin_provisioned = "${data.vsphere_virtual_machine.template.disks.0.thin_provisioned}"
   }
@@ -30,7 +27,7 @@ resource "vsphere_virtual_machine" "virtual_machine" {
     customize {
       timeout = "20"
       linux_options {
-        host_name = "${var.vm_name_prefix}${count.index}"
+        host_name = "${format ("%s-%2d", var.vm_name_prefix, count.index+1)}"
         domain    = "${var.vm_domain}"
       }
       network_interface {
