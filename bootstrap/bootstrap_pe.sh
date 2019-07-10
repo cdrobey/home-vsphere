@@ -56,7 +56,6 @@ function run_puppet {
 function pre_install_pe {
   echo "======================= Executing pre_install_pa ======================="
 
-  yum -y install wget pciutils gem
   wget ${PURL}
   tar -xzf ${PFILE} -C /tmp/
   mkdir -p /etc/puppetlabs/puppet/
