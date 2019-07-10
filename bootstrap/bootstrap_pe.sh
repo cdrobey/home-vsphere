@@ -11,6 +11,16 @@ set -x
 #   - HOME:       Home Directory of script account
 #   - WORKDIR:    TMP directory for script
 #   - LOGFILE:    Execution Log for bootstrap on client hosts
+#   - PVER:       Version of Puppet
+#   - POS:        Operating System Version
+#   - PFILE:      PE Installation File
+#   - PURL:       URI of the download file
+#   - Email:      Puppet Email Name
+#   - GITURL:     Code Manager Control Repo
+#
+# Environment Variables:
+#   - GIT_PRI:  Git SSH Private Key
+#   - GIT_PUB:  Git SSH Public Key
 #--------------------------------------------------------------
 PATH=${PATH}:/opt/puppetlabs/bin
 HOME=/root
@@ -66,14 +76,14 @@ function post_install_pe {
   mkdir -p /etc/puppetlabs/puppetserver/ssh
 
   cat > /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa << FILE
-${GIT_PRI_KEY}
+${GIT_PRI}
 FILE
   chmod 400 /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa
   chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa
 
 
   cat > /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub << FILE
-${GIT_PUB_KEY}
+${GIT_PUB}
 FILE
   chmod 400 /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub
   chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub
@@ -85,7 +95,7 @@ rbac_user { 'deploy':
     ensure       => 'present',
     name         => 'deploy',
     display_name => 'deployment user account',
-    email        => '${EMAIL}@puppet.com',
+    email        => '${EMAIL}',
     password     => 'puppetlabs',
     roles        => [ 'Code Deployers' ],
 }
