@@ -2,7 +2,7 @@ resource "vsphere_virtual_machine" "virtual_machine" {
   count            = "${var.vm_count}"
   #name             = "${var.vm_name_prefix}${count.index}"
 
-  name             = "${format("%s-%02d", var.vm_name_prefix, count.index + 1)}"
+  name             = "${format("%s%02d", var.vm_name_prefix, count.index + 1)}"
 
   resource_pool_id = "${data.vsphere_resource_pool.resource_pool.id}"
 
