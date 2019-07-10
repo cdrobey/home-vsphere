@@ -2,6 +2,10 @@
 #--------------------------------------------------------------
 # This scripts bootstraps a linux node by installing a puppet
 # master.
+#
+# The firewall must be disabled to function correctly.
+#   Ubuntu:   "sudo systemctl disable ufw"
+#   Centos:   "sudo iptables -F"
 #--------------------------------------------------------------
 set -x
 
