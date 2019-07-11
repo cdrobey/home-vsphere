@@ -34,6 +34,8 @@ resource "vsphere_virtual_machine" "puppet" {
         domain    = "${var.vm_domain}"
       }
       network_interface {
+        ipv4_address = "${var.puppet_ipv4}"
+        ipv4_netmask = "${var.vm_netmask}"
       }
       ipv4_gateway    = "${var.vm_gateway}"
       dns_server_list = ["${var.vm_dns}"]
@@ -77,6 +79,8 @@ resource "vsphere_virtual_machine" "docker" {
         domain    = "${var.vm_domain}"
       }
       network_interface {
+        ipv4_address = "${var.nginx_ipv4}"
+        ipv4_netmask = "${var.vm_netmask}"
       }
       ipv4_gateway    = "${var.vm_gateway}"
       dns_server_list = ["${var.vm_dns}"]
@@ -121,7 +125,9 @@ resource "vsphere_virtual_machine" "nginx" {
         host_name = "${format ("%s%02d", var.nginx_name_prefix, count.index+1)}"
         domain    = "${var.vm_domain}"
       }
-      network_interface {
+      network_interface {        
+        ipv4_address = "${var.nginx_ipv4}"
+        ipv4_netmask = "${var.vm_netmask}"
       }
       ipv4_gateway    = "${var.vm_gateway}"
       dns_server_list = ["${var.vm_dns}"]
@@ -167,6 +173,8 @@ resource "vsphere_virtual_machine" "tig" {
         domain    = "${var.vm_domain}"
       }
       network_interface {
+        ipv4_address = "${var.tig_ipv4}"
+        ipv4_netmask = "${var.vm_netmask}"
       }
       ipv4_gateway    = "${var.vm_gateway}"
       dns_server_list = ["${var.vm_dns}"]

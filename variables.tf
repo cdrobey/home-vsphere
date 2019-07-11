@@ -78,6 +78,9 @@ variable "puppet_count" {
 variable "puppet_name_prefix" {
   description = "Hostname applied by the VMware template customizations"
 }
+variable "puppet_ipv4" {
+  description = "Hostname applied by the VMware template customizations"
+}
 
 
 #===============================================================================
@@ -95,6 +98,9 @@ variable "docker_count" {
   description = "Qty of VM Created from template"
 }
 variable "docker_name_prefix" {
+  description = "Hostname applied by the VMware template customizations"
+}
+variable "docker_ipv4" {
   description = "Hostname applied by the VMware template customizations"
 }
 
@@ -115,6 +121,9 @@ variable "nginx_count" {
 variable "nginx_name_prefix" {
   description = "Hostname applied by the VMware template customizations"
 }
+variable "nginx_ipv4" {
+  description = "Hostname applied by the VMware template customizations"
+}
 
 #===============================================================================
 # TIG virtual machines parameters
@@ -131,5 +140,8 @@ variable "tig_count" {
   description = "Qty of VM Created from template"
 }
 variable "tig_name_prefix" {
+  description = "Hostname applied by the VMware template customizations"
+}
+variable "tig_ipv4" {
   description = "Hostname applied by the VMware template customizations"
 }
