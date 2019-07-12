@@ -79,7 +79,7 @@ resource "vsphere_virtual_machine" "docker" {
         domain    = "${var.vm_domain}"
       }
       network_interface {
-        ipv4_address = "${var.nginx_ipv4}"
+        ipv4_address = "${var.docker_ipv4}"
         ipv4_netmask = "${var.vm_netmask}"
       }
       ipv4_gateway    = "${var.vm_gateway}"
