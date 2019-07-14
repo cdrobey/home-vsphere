@@ -1,4 +1,4 @@
-module "test_virtual_machines" {
+module "puppet_virtual_machines" {
   source               = "./modules/vm"
   datacenter           = "${var.vsphere_datacenter}"
   datastore            = "${var.vsphere_datastore}"
@@ -10,15 +10,12 @@ module "test_virtual_machines" {
   ipv4_gateway         = "${var.vm_gateway}"
   linked_clone         = "${var.vm_linked_clone}"
 
-  template_name        = "${var.test_template}"
-  template_os_family   = "${var.test_template_os_family}"
-  vm_count             = "${var.test_count}"
-  vm_name_prefix       = "${var.test_name_prefix}"
-  num_cpus             = "${var.test_num_cpus}"
-  memory               = "${var.test_memory}"
-  ipv4_network_address = "${var.test_ipv4_network_address}"
-  ipv4_address_start   = "${var.test_ipv4_address_start}"
-
-
-
+  template_name        = "${var.puppet_template}"
+  template_os_family   = "${var.puppet_template_os_family}"
+  vm_count             = "${var.puppet_count}"
+  vm_name_prefix       = "${var.puppet_name_prefix}"
+  num_cpus             = "${var.puppet_num_cpus}"
+  memory               = "${var.puppet_memory}"
+  ipv4_network_address = "${var.puppet_ipv4_network_address}"
+  ipv4_address_start   = "${var.puppet_ipv4_address_start}"
 }

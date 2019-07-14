@@ -60,26 +60,35 @@ variable "vm_dns" {
   description = "DNS Server applied by the VMware template customizations"
 }
 
+variable "puppet_count"  {
+  description = "The count to create of TIG virtual machines"
+}
 
-# The count to create of TIG virtual machines #
-variable "test_count"  {}
+variable "puppet_name_prefix" {
+  description = "The prefix to add to the TIG virtual machines"
+}
 
-# The prefix to add to the TIG virtual machines #
-variable "test_name_prefix" {}
+variable "puppet_num_cpus" {
+  description ="The number of vCPU allocated to the TIG virtual machines"
+}
 
-# The number of vCPU allocated to the TIG virtual machines #
-variable "test_num_cpus" {}
+variable "puppet_memory" {
+  description = "The amount of RAM allocated to the TIG virtual machines"
+}
 
-# The amount of RAM allocated to the TIG virtual machines #
-variable "test_memory" {}
+variable "puppet_ipv4_address_start" {
+  description = "The starting IP Address to the TIG virtual machines"
+}
 
-# The IP Address to the TIG virtual machines #
-variable "test_ipv4_address_start" {}
+variable "puppet_ipv4_network_address" {
+  description = "The starting IP Address Octect for the Network Block"
+}
 
-variable "test_ipv4_network_address" {}
+variable "puppet_template" {
+  description ="The vSphere template the virtual machine are based on"
+}
 
-# The vSphere template the virtual machine are based on #
-variable "test_template" {}
-
-variable "test_template_os_family" {}
+variable "puppet_template_os_family" {
+  description = "The vSphere template OS the virtual machine are based on (linux, windows, or base)"
+}
 
