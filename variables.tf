@@ -92,3 +92,103 @@ variable "puppet_template_os_family" {
   description = "The vSphere template OS the virtual machine are based on (linux, windows, or base)"
 }
 
+
+
+variable "docker_count"  {
+  description = "The count to create of TIG virtual machines"
+}
+
+variable "docker_name_prefix" {
+  description = "The prefix to add to the TIG virtual machines"
+}
+
+variable "docker_num_cpus" {
+  description ="The number of vCPU allocated to the TIG virtual machines"
+}
+
+variable "docker_memory" {
+  description = "The amount of RAM allocated to the TIG virtual machines"
+}
+
+variable "docker_ipv4_address_start" {
+  description = "The starting IP Address to the TIG virtual machines"
+}
+
+variable "docker_ipv4_network_address" {
+  description = "The starting IP Address Octect for the Network Block"
+}
+
+variable "docker_template" {
+  description ="The vSphere template the virtual machine are based on"
+}
+
+variable "docker_template_os_family" {
+  description = "The vSphere template OS the virtual machine are based on (linux, windows, or base)"
+}
+
+
+variable "tig_count"  {
+  description = "The count to create of TIG virtual machines"
+}
+
+variable "tig_name_prefix" {
+  description = "The prefix to add to the TIG virtual machines"
+}
+
+variable "tig_num_cpus" {
+  description ="The number of vCPU allocated to the TIG virtual machines"
+}
+
+variable "tig_memory" {
+  description = "The amount of RAM allocated to the TIG virtual machines"
+}
+
+variable "tig_ipv4_address_start" {
+  description = "The starting IP Address to the TIG virtual machines"
+}
+
+variable "tig_ipv4_network_address" {
+  description = "The starting IP Address Octect for the Network Block"
+}
+
+variable "tig_template" {
+  description ="The vSphere template the virtual machine are based on"
+}
+
+variable "tig_template_os_family" {
+  description = "The vSphere template OS the virtual machine are based on (linux, windows, or base)"
+}
+
+
+variable "nginx_count"  {
+  description = "The count to create of TIG virtual machines"
+}
+
+variable "nginx_name_prefix" {
+  description = "The prefix to add to the TIG virtual machines"
+}
+
+variable "nginx_num_cpus" {
+  description ="The number of vCPU allocated to the TIG virtual machines"
+}
+
+variable "nginx_memory" {
+  description = "The amount of RAM allocated to the TIG virtual machines"
+}
+
+variable "nginx_ipv4_address_start" {
+  description = "The starting IP Address to the TIG virtual machines"
+}
+
+variable "nginx_ipv4_network_address" {
+  description = "The starting IP Address Octect for the Network Block"
+}
+
+variable "nginx_template" {
+  description ="The vSphere template the virtual machine are based on"
+}
+
+variable "nginx_template_os_family" {
+  description = "The vSphere template OS the virtual machine are based on (linux, windows, or base)"
+}
+
