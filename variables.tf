@@ -60,88 +60,26 @@ variable "vm_dns" {
   description = "DNS Server applied by the VMware template customizations"
 }
 
-#===============================================================================
-# Puppet virtual machines parameters
-#===============================================================================
 
-variable "puppet_cpu" {
-  description = "Number of vCPU for the Kubernetes master virtual machines"
-}
+# The count to create of TIG virtual machines #
+variable "test_count"  {}
 
-variable "puppet_ram" {
-  description = "Amount of RAM for the Kubernetes master virtual machines (example: 2048)"
-}
+# The prefix to add to the TIG virtual machines #
+variable "test_name_prefix" {}
 
-variable "puppet_count" {
-  description = "Qty of VM Created from template"
-}
-variable "puppet_name_prefix" {
-  description = "Hostname applied by the VMware template customizations"
-}
-variable "puppet_ipv4" {
-  description = "Hostname applied by the VMware template customizations"
-}
+# The number of vCPU allocated to the TIG virtual machines #
+variable "test_num_cpus" {}
 
+# The amount of RAM allocated to the TIG virtual machines #
+variable "test_memory" {}
 
-#===============================================================================
-# Docker virtual machines parameters
-#===============================================================================
-variable "docker_cpu" {
-  description = "Number of vCPU for the Kubernetes master virtual machines"
-}
+# The IP Address to the TIG virtual machines #
+variable "test_ipv4_address_start" {}
 
-variable "docker_ram" {
-  description = "Amount of RAM for the Kubernetes master virtual machines (example: 2048)"
-}
+variable "test_ipv4_network_address" {}
 
-variable "docker_count" {
-  description = "Qty of VM Created from template"
-}
-variable "docker_name_prefix" {
-  description = "Hostname applied by the VMware template customizations"
-}
-variable "docker_ipv4" {
-  description = "Hostname applied by the VMware template customizations"
-}
+# The vSphere template the virtual machine are based on #
+variable "test_template" {}
 
-#===============================================================================
-# NGINX virtual machines parameters
-#===============================================================================
-variable "nginx_cpu" {
-  description = "Number of vCPU for the Kubernetes master virtual machines"
-}
+variable "test_template_os_family" {}
 
-variable "nginx_ram" {
-  description = "Amount of RAM for the Kubernetes master virtual machines (example: 2048)"
-}
-
-variable "nginx_count" {
-  description = "Qty of VM Created from template"
-}
-variable "nginx_name_prefix" {
-  description = "Hostname applied by the VMware template customizations"
-}
-variable "nginx_ipv4" {
-  description = "Hostname applied by the VMware template customizations"
-}
-
-#===============================================================================
-# TIG virtual machines parameters
-#===============================================================================
-variable "tig_cpu" {
-  description = "Number of vCPU for the Kubernetes master virtual machines"
-}
-
-variable "tig_ram" {
-  description = "Amount of RAM for the Kubernetes master virtual machines (example: 2048)"
-}
-
-variable "tig_count" {
-  description = "Qty of VM Created from template"
-}
-variable "tig_name_prefix" {
-  description = "Hostname applied by the VMware template customizations"
-}
-variable "tig_ipv4" {
-  description = "Hostname applied by the VMware template customizations"
-}
