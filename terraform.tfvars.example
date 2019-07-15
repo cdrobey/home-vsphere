@@ -1,9 +1,6 @@
-#===============================================================================
-# VMware vSphere configuration
-#===============================================================================
 
 # vCenter IP or FQDN #
-vsphere_server = "vcentername"
+vsphere_server = "vcenter"
 
 # vSphere username used to deploy the infrastructure #
 vsphere_user = "administrator@vsphere.local"
@@ -21,50 +18,150 @@ vsphere_cluster = "Cluster"
 vsphere_resource_pool = "Cluster/Resources"
 
 # vSphere resource pool name that will be created to deploy the virtual machines #
-vsphere_host = "esx.domain.com"
+vsphere_host = "vspherehost.lab.local"
 
 # vSphere switch that will be used for the host #
-vsphere_network = "VM Network"
+vsphere_network = "MGMT"
 
 # The datastore name used to store  #
-vsphere_datastore = "DS-Primary"
+vsphere_datastore = "DS-FAST"
 
 #===============================================================================
 # Global virtual machines parameters
 #===============================================================================
 
-# The count to crate of the virtual machines #
-vm_count = "1"
-
-# The prefix to add to the names of the virtual machines #
-vm_name_prefix = "vm-ubuntu"
-
 # The domain to add to the virtual machines #
-vm_domain = "lab.home"
+vm_domain = "lab.local"
 
 # The netmask to the virtual machines # 
 vm_netmask = "24"
 
 # The gateway to the virtual machines # 
-vm_gateway = "X.X.X.X"
+vm_gateway = "10.1.1.1"
 
 # The dns server to the virtual machines # 
-vm_dns = "X.X.X.X"
-
-# The vSphere template the virtual machine are based on #
-vm_template = "Ubuntu_Template"
+vm_dns = "10.1.1.1"
 
 # Use linked clone (true/false)
 vm_linked_clone = "false"
 
-# The number of vCPU allocated to the master virtual machines #
-vm_cpu = "2"
+# The administrative user for the virtual machine #
+vm_admin_user = "ubuntu"
 
-# The amount of RAM allocated to the master virtual machines #
-vm_ram = "2048"
+# The administrative password for the virtual machine #
+vm_admin_password = "password"
 
-# The amount of IPs allocated to the master virtual machines #
-vm_ips = {
-  "0" = "X.X.X.X"
-}
+#===============================================================================
+# Puppet virtual machines parameters
+#===============================================================================
 
+# The count to create of PUPPET virtual machines #
+puppet_count = "1"
+
+# The prefix to add to the PUPPET virtual machines #
+puppet_name_prefix = "puppet-p"
+
+# The number of vCPU allocated to the PUPPET virtual machines #
+puppet_num_cpus = "4"
+
+# The amount of RAM allocated to the PUPPET virtual machines #
+puppet_memory = "8192"
+
+# The IP Address to the PUPPET virtual machines #
+puppet_ipv4_address_start = "10"
+
+# The IP Address to the PUPPET virtual machines #
+puppet_ipv4_network_address = "10.1.1.0/24"
+
+# The OS Clone template the PUPPET virtual machine are based on #
+puppet_template = "tmp-ubuntu-1804"
+
+# The OS Family the PUPPET virtual machine are based on #
+puppet_template_os_family = "puppet"
+
+#===============================================================================
+# Docker virtual machines parameters
+#===============================================================================
+
+# The count to create of DOCKER virtual machines #
+docker_count = "1"
+
+# The prefix to add to the DOCKER virtual machines #
+docker_name_prefix = "docker-p"
+
+# The number of vCPU allocated to the DOCKER virtual machines #
+docker_num_cpus = "4"
+
+# The amount of RAM allocated to the DOCKER virtual machines #
+docker_memory = "8192"
+
+# The IP Address to the DOCKER virtual machines #
+docker_ipv4_address_start = "14"
+
+# The IP Address to the DOCKER virtual machines #
+docker_ipv4_network_address = "10.1.1.0/24"
+
+# The OS Clone template the DOCKER virtual machine are based on #
+docker_template = "tmp-ubuntu-1804"
+
+# The OS Family the DOCKER virtual machine are based on #
+docker_template_os_family = "linux"
+
+#===============================================================================
+# NGINX virtual machines parameters
+#===============================================================================
+
+# The count to create of NGINX virtual machines #
+nginx_count = "1"
+
+# The prefix to add to the NGINX virtual machines #
+nginx_name_prefix = "nginx-p"
+
+# The number of vCPU allocated to the NGINX virtual machines #
+nginx_num_cpus = "1"
+
+# The amount of RAM allocated to the NGINX virtual machines #
+nginx_memory = "1024"
+
+# The IP Address to the NGINX virtual machines #
+nginx_ipv4_address_start = "11"
+
+# The IP Address to the NGINX virtual machines #
+nginx_ipv4_network_address = "10.1.1.0/24"
+
+# The OS Clone template the NGINX virtual machine are based on #
+nginx_template = "tmp-ubuntu-1804"
+
+# The OS Family the NGINX virtual machine are based on #
+nginx_template_os_family = "linux"
+
+
+
+
+#===============================================================================
+# Telegraf, InfluxDB, Grafana virtual machines parameters
+#===============================================================================
+
+# The count to create of TIG virtual machines #
+tig_count = "1"
+
+# The prefix to add to the TIG virtual machines #
+tig_name_prefix = "tig-p"
+
+# The number of vCPU allocated to the TIG virtual machines #
+tig_num_cpus = "2"
+
+# The amount of RAM allocated to the TIG virtual machines #
+tig_memory = "2048"
+
+# The IP Address to the TIG virtual machines #
+tig_ipv4_address_start = "13"
+
+# The IP Address to the TIG virtual machines #
+tig_ipv4_network_address = "10.1.1.0/24"
+
+# The OS Clone template the TIG virtual machine are based on #
+tig_template = "tmp-ubuntu-1804"
+
+# The OS Family the TIG virtual machine are based on #
+tig_template_os_family = "linux"
