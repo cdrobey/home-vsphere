@@ -78,20 +78,6 @@ function post_install_pe {
 
   mkdir -p /etc/puppetlabs/puppetserver/ssh
 
- # cat > /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa << FILE
-#${GIT_PRI}
-#FILE
-#  chmod 400 /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa
-#  chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa
-
-
-#  cat > /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub << FILE
-#${GIT_PUB}
-#FILE
-#  chmod 400 /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub
-#  chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub
-
-
   puppet module install pltraining-rbac
   cat > /tmp/user.pp << FILE
 rbac_user { 'deploy':
