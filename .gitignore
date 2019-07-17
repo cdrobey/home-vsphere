@@ -9,3 +9,6 @@
 
 # .tfvars files
 *.tfvars
+
+# Bolt Files
+inventor*
