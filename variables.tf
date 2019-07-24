@@ -199,3 +199,35 @@ variable "tig_template" {
 variable "tig_template_os_family" {
   description = "The vSphere template OS the virtual machine are based on (linux, windows, or base)"
 }
+
+variable "jumpw_count"  {
+  description = "The count to create of Windows Jump virtual machines"
+}
+
+variable "jumpw_name_prefix" {
+  description = "The prefix to add to the Windows Jump virtual machines"
+}
+
+variable "jumpw_num_cpus" {
+  description ="The number of vCPU allocated to the Windows Jump virtual machines"
+}
+
+variable "jumpw_memory" {
+  description = "The amount of RAM allocated to the Windows Jump virtual machines"
+}
+
+variable "jumpw_ipv4_address_start" {
+  description = "The starting IP Address to the Windows Jump virtual machines"
+}
+
+variable "jumpw_ipv4_network_address" {
+  description = "The starting IP Address Octect for the Network Block"
+}
+
+variable "jumpw_template" {
+  description ="The vSphere template the virtual machine are based on"
+}
+
+variable "jumpw_template_os_family" {
+  description = "The vSphere template OS the virtual machine are based on (linux, windows, or base)"
+}

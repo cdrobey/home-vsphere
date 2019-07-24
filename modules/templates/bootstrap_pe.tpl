@@ -21,10 +21,6 @@ set -x
 #   - PURL:       URI of the download file
 #   - Email:      Puppet Email Name
 #   - GITURL:     Code Manager Control Repo
-#
-# Environment Variables:
-#   - GIT_PRI:  Git SSH Private Key
-#   - GIT_PUB:  Git SSH Public Key
 #--------------------------------------------------------------
 PATH=$${PATH}:/opt/puppetlabs/bin
 HOME=/root
@@ -36,8 +32,6 @@ PFILE="puppet-enterprise-$${PVER}-$${POS}-amd64.tar.gz"
 PURL="https://pm.puppetlabs.com/puppet-enterprise/$${PVER}/$${PFILE}"
 EMAIL="chris.roberson@puppet.com"
 GITURL="https://github.com/cdrobey/puppet-repo"
-GIT_PUB=${git_pub}
-GIT_PRI=${git_pri}
 
 #--------------------------------------------------------------
 # Redirect all stdout and stderr to logfile,
@@ -67,22 +61,6 @@ YAML
 #--------------------------------------------------------------
 function post_install_pe {
   echo "======================= Executing post_install_pe ======================="
-
-  mkdir -p /etc/puppetlabs/puppetserver/ssh
-
-  cat > /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa << FILE
-$${GIT_PRI}
-FILE
-  chmod 400 /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa
-  chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa
-
-
-  cat > /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub << FILE
-$${GIT_PUB}
-FILE
-  chmod 400 /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub
-  chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa.pub
-
 
   puppet module install pltraining-rbac
   cat > /tmp/user.pp << FILE
