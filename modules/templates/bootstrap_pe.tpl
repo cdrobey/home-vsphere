@@ -94,7 +94,6 @@ function install_pe {
 "puppet_enterprise::puppet_master_host": "%%{::trusted.certname}"
 "puppet_enterprise::profile::master::code_manager_auto_configure": true
 "puppet_enterprise::profile::master::r10k_remote": "$${GITURL}"
-"puppet_enterprise::profile::master::r10k_private_key": "/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa"
 FILE
   /tmp/puppet-enterprise-$${PVER}-$${POS}-amd64/puppet-enterprise-installer -c /tmp/pe.conf
   chown pe-puppet:pe-puppet /etc/puppetlabs/puppetserver/ssh/id-*
